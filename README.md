@@ -8,3 +8,7 @@ both -Dlanguage and -Dbrowser are optional when these are not provided en is def
 allowed vlaues for  -Dlanguage are en,es,nl,de
 
 allowed vlaues for  -Dbrowser are firefox,chrome
+
+#execution reports
+
+test execution reports are available at '\target\surefire-reports\index.html' and '/target/surefire-reports/emailable-report.html'
