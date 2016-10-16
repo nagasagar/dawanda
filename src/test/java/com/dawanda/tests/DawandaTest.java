@@ -132,7 +132,7 @@ public class DawandaTest extends BaseTest {
       	.clickResgisterNow_withknownErrors();
     	 //verify based on current language of dawanda website
     	 softAssert.assertEquals(resistrationpage.getPassword_Formvalidation_msgs(), prop.getProperty(language+"_invalid_password"),
-     			"Expected Error messgae not dsplayed when un-acceptable password is provided");
+     			"Expected Error messgae not dsplayed when un-acceptable password is provided - ["+resistrationpage.getPassword_Formvalidation_msgs()+"] is displayed when ["+prop.getProperty(language+"_invalid_password")+"] is expected");
     	 
     	 // at the end to mark test failure if any of the previous soft asserts had failed
     	 softAssert.assertAll();
