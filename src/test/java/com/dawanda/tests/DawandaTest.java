@@ -25,12 +25,12 @@ import com.nagasagar.dawanda.BaseTest;
 
 public class DawandaTest extends BaseTest {
 
-	  private Assertion hardAssert = new Assertion();
-	  private SoftAssert softAssert = new SoftAssert();
+	  
 	  Properties prop = new Properties();
 	
 	 @Test
     public void RegistrationTest() throws Exception {
+		  SoftAssert softAssert = new SoftAssert();
     	Random rand = new Random(); 
     	long num = rand.nextLong();
     	String usrname = "frontend-test-user"+num ;
@@ -74,6 +74,7 @@ public class DawandaTest extends BaseTest {
     
     @Test
     public void RegistrationFormFieldsTest() throws Exception {
+    	SoftAssert softAssert = new SoftAssert();
     	Random rand = new Random(); 
     	long num = rand.nextLong();
     	String usrname = "frontend-test-user"+num ;
