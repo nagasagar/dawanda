@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    
+    <parameter name="en_appURL" value="http://en.dawanda.com/"/>
+    <parameter name="de_appURL" value="http://de.dawanda.com/"/>
+    <parameter name="es_appURL" value="http://es.dawanda.com/"/>
+    <parameter name="nl_appURL" value="http://nl.dawanda.com/"/>
+    
+    <parameter name="browser" value="firefox" />  <!--default browser-->
+    <parameter name="runMode" value="LOCAL" />
+
+	<test name="DawandaTest">
+	    <classes>
+			<class name="com.dawanda.tests.DawandaTest" />
+		</classes>
+	</test>
+	
+</suite>
