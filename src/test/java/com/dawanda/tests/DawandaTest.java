@@ -48,7 +48,7 @@ public class DawandaTest extends BaseTest {
     	.clickResgisterNow();
     	
     	String request_emailvalidation_text =almostherepage.get_email_hint_text();
-    	
+    	// soft assert is used when test execution is to be continued after failure of any step
     	softAssert.assertTrue(request_emailvalidation_text.contains("frontend-tests+-"+num+"@dawandamail.com"), "Message to validate emails id doesnot contain entered email id");
     	
     	almostherepage.clickLogoutButton();
@@ -62,10 +62,13 @@ public class DawandaTest extends BaseTest {
     	.clickLogin();
     	
     	String loggedinuser = homepage.getLoggedInUser();
-    	
+    	// soft assert is used when test execution is to be continued after failure of any step
     	softAssert.assertTrue(loggedinuser.equalsIgnoreCase(usrname), "Loggedin user name is not displayed");
     	
     	homepage.clickLogoutButton();
+    	
+    	// at the end to mark test failure if any of the previous soft asserts had failed
+   	 softAssert.assertAll();
     	
     }
     
@@ -101,6 +104,7 @@ public class DawandaTest extends BaseTest {
     				break;
     			}
     		 }
+    		// soft assert is used when test execution is to be continued after failure of any step
     		 softAssert.assertTrue(error_msg_displayed, "Error Message not displayed when "+errorField+" is set blank");
     	 }
     	 
@@ -128,6 +132,9 @@ public class DawandaTest extends BaseTest {
     	 //verify based on current language of dawanda website
     	 softAssert.assertEquals(resistrationpage.getPassword_Formvalidation_msgs(), prop.getProperty(language+"_invalid_password"),
      			"Expected Error messgae not dsplayed when un-acceptable password is provided");
+    	 
+    	 // at the end to mark test failure if any of the previous soft asserts had failed
+    	 softAssert.assertAll();
     }
     
     @BeforeTest
